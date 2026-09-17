@@ -1,0 +1,103 @@
+/* Owns non-token dark-theme overrides only; must not contain light-theme rules. */
+/* Dark mode is enabled when js/main.js adds data-theme="dark" to <html>.
+  The main page surfaces and text change, while the maroon brand areas stay dark. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --paper-bg: #0C0C0C;
+  --surface: #171515;
+  --ink: #F5F5F5;
+  --ink-soft: #d3cfcf;
+  --line: rgba(212, 169, 55, 0.22);
+  --dark-accent: var(--gold-light);
+  --dark-accent-border: var(--gold);
+}
+
+/* Text that was dark on the light theme needs a brighter color here. */
+html[data-theme="dark"] .section-head h2,
+html[data-theme="dark"] .logo-text span,
+html[data-theme="dark"] .results-count strong,
+html[data-theme="dark"] .paper-card h3,
+html[data-theme="dark"] .empty-state h3,
+html[data-theme="dark"] .error-state h3,
+html[data-theme="dark"] .tour-card h3,
+html[data-theme="dark"] .detail-head h3,
+html[data-theme="dark"] .modal h3,
+html[data-theme="dark"] .modal-paper-summary strong {
+  color: var(--ink);
+}
+
+/* Use the light accent color for controls and icons against dark surfaces. */
+html[data-theme="dark"] .btn-ghost:hover:not(:disabled),
+html[data-theme="dark"] .icon-btn:hover,
+html[data-theme="dark"] .search-toggle svg,
+html[data-theme="dark"] .mobile-search-btn,
+html[data-theme="dark"] .mobile-theme-btn,
+html[data-theme="dark"] .advanced-toggle,
+html[data-theme="dark"] .range-values span,
+html[data-theme="dark"] .btn-reset-advanced:hover,
+html[data-theme="dark"] .main-nav a:hover,
+html[data-theme="dark"] .main-nav a.active,
+html[data-theme="dark"] .main-nav button:hover,
+html[data-theme="dark"] .main-nav button.active,
+html[data-theme="dark"] .mobile-menu-btn,
+html[data-theme="dark"] .mobile-menu-panel a.active,
+html[data-theme="dark"] .mobile-menu-panel button.active,
+html[data-theme="dark"] .paper-card h3 button:hover,
+html[data-theme="dark"] .pill,
+html[data-theme="dark"] .read-more,
+html[data-theme="dark"] .empty-state svg,
+html[data-theme="dark"] .error-state svg,
+html[data-theme="dark"] .tour-close:hover,
+html[data-theme="dark"] .detail-modal-close:hover,
+html[data-theme="dark"] .detail-body h4,
+html[data-theme="dark"] .detail-sidebar h4,
+html[data-theme="dark"] .recent-item:hover,
+html[data-theme="dark"] .chat-result-btn,
+html[data-theme="dark"] .chip,
+html[data-theme="dark"] .a11y-list svg {
+  color: var(--dark-accent);
+}
+
+html[data-theme="dark"] .btn-ghost:hover:not(:disabled),
+html[data-theme="dark"] .icon-btn:hover,
+html[data-theme="dark"] .search-toggle:hover,
+html[data-theme="dark"] .search-toggle[aria-expanded="true"],
+html[data-theme="dark"] .search-input:focus,
+html[data-theme="dark"] .detail-modal-close:hover,
+html[data-theme="dark"] .chat-result-btn:hover,
+html[data-theme="dark"] .chat-input-row input:focus {
+  border-color: var(--dark-accent-border);
+}
+
+/* Make status labels softer so their colored backgrounds work in dark mode. */
+html[data-theme="dark"] .pill-status[data-status="published"] {
+  background: rgba(63, 125, 79, .16);
+  border-color: rgba(63, 125, 79, .4);
+  color: #7FCB93;
+}
+
+html[data-theme="dark"] .pill-status[data-status="unpublished"] {
+  background: rgba(138, 106, 47, .2);
+  border-color: rgba(212, 169, 55, .4);
+  color: var(--gold-light);
+}
+
+html[data-theme="dark"] .pill-status[data-status="presentation"] {
+  background: rgba(94, 59, 132, .22);
+  border-color: rgba(160, 110, 210, .45);
+  color: #C9A8EA;
+}
+
+html[data-theme="dark"] .pill-status[data-status="report"] {
+  background: rgba(47, 108, 138, .2);
+  border-color: rgba(90, 165, 205, .45);
+  color: #7EC3E8;
+}
+
+/* Use darker shimmer colors while loading in dark mode. */
+html[data-theme="dark"] .sk {
+  background: linear-gradient(90deg, var(--line) 25%, #2C2C2C 37%, var(--line) 63%);
+  background-size: 400% 100%;
+}
+
+

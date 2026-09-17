@@ -1,0 +1,180 @@
+/* Owns shared request and accessibility modal rules only; must not contain detail-modal styling. */
+/* ============================================================
+   MODAL - Request Paper / Accessibility
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 16, 19, .55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 110;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .2s;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--paper-bg);
+  border-radius: var(--radius-l);
+  padding: 30px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: var(--shadow-pop);
+  position: relative;
+  max-height: 88vh;
+  overflow-y: auto;
+  transform: translateY(14px) scale(.98);
+  transition: transform .22s ease;
+}
+
+.modal-overlay.is-open .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal.modal-wide {
+  max-width: 560px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+.modal h3 {
+  font-size: 22px;
+  color: var(--maroon-950);
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.modal-paper-summary {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+}
+
+.modal-paper-summary strong {
+  display: block;
+  font-size: 14.5px;
+  color: var(--maroon-900);
+  line-height: 1.4;
+}
+
+.modal-paper-summary span {
+  display: block;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.modal-field {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.modal-field input,
+.modal-field textarea {
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-s);
+  padding: 11px 13px;
+  font-size: 14px;
+  font-family: inherit;
+  width: 100%;
+  background: var(--surface);
+}
+
+.modal-field input.has-error,
+.modal-field textarea.has-error {
+  border-color: #C0455B;
+}
+
+.modal-field-error {
+  font-size: 11.5px;
+  color: #C0455B;
+  min-height: 14px;
+}
+
+.modal-field textarea {
+  resize: vertical;
+  min-height: 76px;
+}
+
+.modal .btn-primary {
+  width: 100%;
+  margin-top: 20px;
+  background: var(--maroon-800);
+  color: var(--cream);
+  border: none;
+  padding: 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14.5px;
+}
+
+.modal .btn-primary:hover {
+  background: var(--maroon-900);
+}
+
+.modal-hint {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+#a11yTourBtn {
+  display: block;
+  margin: 20px auto 0;
+  width: fit-content;
+  min-width: 120px;
+}
+
+.a11y-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.a11y-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  list-style: none;
+}
+
+.a11y-list svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--maroon-700);
+}
+

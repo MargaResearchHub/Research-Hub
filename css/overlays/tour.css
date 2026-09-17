@@ -1,0 +1,76 @@
+/* Owns guided-tour overlay rules only; must not contain modal or chat styling. */
+/* ============================================================
+   SITE TOUR OVERLAY
+   ============================================================ */
+.tour-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 16, 19, .7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 130;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+.tour-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tour-card {
+  width: min(100%, 520px);
+  background: var(--paper-bg);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-pop);
+  padding: 32px;
+  position: relative;
+  text-align: left;
+}
+
+.tour-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--ink-soft);
+  line-height: 1;
+}
+
+.tour-close:hover {
+  color: var(--maroon-800);
+}
+
+.tour-card h3 {
+  margin-top: 8px;
+  margin-bottom: 18px;
+  font-size: 24px;
+  color: var(--maroon-950);
+}
+
+.tour-step p {
+  margin-top: 10px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  font-size: 15px;
+}
+
+.tour-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.tour-progress {
+  margin-top: 16px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  text-align: right;
+}
+

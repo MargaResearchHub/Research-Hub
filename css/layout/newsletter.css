@@ -1,0 +1,78 @@
+/* Owns newsletter section rules only; must not contain footer or overlay styling. */
+/* ============================================================
+   NEWSLETTER
+   ============================================================ */
+.newsletter-band {
+  background: linear-gradient(120deg, var(--maroon-900), var(--maroon-800));
+  color: var(--cream);
+  padding: 56px 0;
+}
+
+.newsletter-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.newsletter-copy h2 {
+  font-size: 26px;
+  color: var(--white);
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.newsletter-copy p {
+  margin-top: 8px;
+  color: rgba(249, 241, 228, .75);
+  font-size: 14px;
+  max-width: 420px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.newsletter-input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.newsletter-form input {
+  padding: 13px 18px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(249, 241, 228, .35);
+  background: rgba(249, 241, 228, .08);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  min-width: 260px;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(249, 241, 228, .55);
+}
+
+.newsletter-form input:focus {
+  border-color: var(--gold);
+}
+
+.newsletter-form input.has-error {
+  border-color: #E27C7C;
+}
+
+.newsletter-error {
+  font-size: 12px;
+  color: var(--gold-light);
+  padding-left: 6px;
+  min-height: 14px;
+}
+

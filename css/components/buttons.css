@@ -1,0 +1,144 @@
+/* Owns shared button and theme-control rules only; must not contain form layout. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  font-weight: 600;
+  font-size: 14.5px;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, opacity .15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--maroon-950);
+}
+
+.btn-gold:hover:not(:disabled) {
+  background: var(--gold-light);
+  box-shadow: 0 10px 24px -10px rgba(212, 169, 55, .55);
+}
+
+.btn-outline-light {
+  border-color: rgba(249, 241, 228, .5);
+  color: var(--cream);
+}
+
+.btn-outline-light:hover {
+  background: rgba(249, 241, 228, .1);
+  border-color: var(--cream);
+}
+
+.btn-maroon {
+  background: var(--maroon-800);
+  color: var(--cream);
+}
+
+.btn-maroon:hover:not(:disabled) {
+  background: var(--maroon-900);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--maroon-700);
+  color: var(--maroon-800);
+}
+
+.btn-ghost.is-active {
+  background: var(--maroon-800);
+  border-color: var(--maroon-800);
+  color: var(--cream);
+}
+
+.btn-sm {
+  padding: 9px 16px;
+  font-size: 13px;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  transition: border-color .15s, color .15s;
+  flex: none;
+}
+
+.icon-btn:hover {
+  border-color: var(--maroon-700);
+  color: var(--maroon-800);
+}
+
+/* The desktop and mobile theme buttons use the same styles. */
+.theme-toggle {
+  position: relative;
+}
+
+.mobile-theme-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--maroon-900);
+  flex: none;
+}
+
+.theme-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .25s ease, transform .35s ease;
+}
+
+.theme-icon-sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(.4);
+}
+
+.theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+html[data-theme="dark"] .theme-icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+html[data-theme="dark"] .theme-icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(.4);
+}
+

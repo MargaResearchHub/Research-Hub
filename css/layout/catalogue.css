@@ -1,0 +1,342 @@
+/* Owns catalogue, card, toolbar, and catalogue helper rules only; must not contain overlays. */
+.section {
+  padding: 88px 0;
+}
+
+.section-head {
+  max-width: 640px;
+  margin: 0 auto 44px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-head h2 {
+  font-size: clamp(28px, 3.4vw, 38px);
+  color: var(--maroon-900);
+  font-weight: 700;
+}
+
+.section-head p {
+  color: var(--ink-soft);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+@media (max-width:640px) {
+  .section {
+    padding: 56px 0;
+  }
+}
+
+/* ============================================================
+   AREA ICON BADGE (self-contained SVG icon set)
+   ============================================================ */
+.area-icon {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  display: inline-block;
+}
+
+.area-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   TOOLBAR - result count, sort, active filter chips
+   ============================================================ */
+.results-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.results-count {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.results-count strong {
+  color: var(--maroon-900);
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sort-select {
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 30px 9px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 600;
+  background: var(--surface) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="%236B5257" stroke-width="1.5" fill="none"/></svg>') no-repeat right 12px center;
+  appearance: none;
+  color: var(--ink);
+}
+
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.active-filters[hidden] {
+  display: none;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 8px 6px 13px;
+  border-radius: 999px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  color: var(--maroon-800);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.filter-chip button {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(110, 26, 40, .1);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--maroon-800);
+  font-size: 13px;
+  line-height: 1;
+  flex: none;
+}
+
+.filter-chip button:hover {
+  background: var(--maroon-800);
+  color: var(--cream);
+}
+
+.filter-chip-clear {
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: 12.5px;
+  text-decoration: underline;
+  padding: 6px 4px;
+}
+
+.filter-chip-clear:hover {
+  color: var(--maroon-800);
+}
+
+/* ============================================================
+   PAPER CARD (compact / browse view)
+   ============================================================ */
+.paper-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+@media (max-width:760px) {
+  .paper-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.paper-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.marga-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: url("../../site_logo/marga-logo.jpg") center/cover no-repeat;
+}
+
+.marga-badge::after {
+  display: none;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.paper-card h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--maroon-950);
+  font-weight: 700;
+}
+
+.paper-card.has-badge h3 {
+  padding-right: 44px;
+}
+
+.paper-card h3 button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.paper-card h3 button:hover {
+  color: var(--maroon-700);
+  text-decoration: underline;
+}
+
+.paper-authors {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pill-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 99px;
+  background: var(--paper-bg);
+  border: 1px solid var(--line);
+  color: var(--maroon-800);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pill-status[data-status="published"] {
+  background: var(--status-published-bg);
+  border-color: transparent;
+  color: var(--status-published);
+}
+
+.pill-status[data-status="unpublished"] {
+  background: var(--status-unpublished-bg);
+  border-color: transparent;
+  color: var(--status-unpublished);
+}
+
+.pill-status[data-status="presentation"] {
+  background: var(--status-presentation-bg);
+  border-color: transparent;
+  color: var(--status-presentation);
+}
+
+.pill-status[data-status="report"] {
+  background: var(--status-report-bg);
+  border-color: transparent;
+  color: var(--status-report);
+}
+
+.paper-desc {
+  font-size: 13.8px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.read-more {
+  background: none;
+  border: none;
+  color: var(--maroon-800);
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 0;
+  margin-top: -4px;
+  align-self: flex-start;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.card-actions .spacer {
+  flex: 1;
+}
+
+.request-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--maroon-950);
+  transition: background .15s;
+  flex: none;
+}
+
+.request-btn:hover {
+  background: var(--gold-light);
+}
+
+.save-btn svg {
+  transition: fill .15s;
+}
+
+.save-btn.is-saved {
+  background: var(--maroon-800);
+  border-color: var(--maroon-800);
+  color: var(--cream);
+}
+
+.save-btn.is-saved svg {
+  fill: currentColor;
+}
+
+

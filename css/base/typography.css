@@ -1,0 +1,20 @@
+/* Owns typography and section heading rules only; must not contain layout mechanics. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1.5px;
+  background: var(--gold);
+  display: inline-block;
+}
+

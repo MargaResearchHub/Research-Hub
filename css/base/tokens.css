@@ -1,0 +1,47 @@
+/* Owns design tokens only; must not contain component or layout rules. */
+/* Styles for the Marga Research Hub page. */
+
+/* Shared colors, sizes, fonts, and shadows used throughout the page. */
+:root {
+  --maroon-950: #3F0D16;
+  --maroon-900: #57121E;
+  --maroon-800: #6E1A28;
+  --maroon-700: #84202F;
+  --maroon-600: #9A2A3B;
+  --gold: #D4A937;
+  --gold-light: #EAD08A;
+  --cream: #F9F1E4;
+  --paper-bg: #FBF7EF;
+  --ink: #2A1013;
+  --ink-soft: #6B5257;
+  --line: #E7DCC9;
+  --line-dark: rgba(249, 241, 228, 0.16);
+  --white: #FFFFFF;
+  --surface: #FFFFFF;
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 22px;
+  --shadow-card: 0 10px 30px -14px rgba(63, 13, 22, 0.28);
+  --shadow-pop: 0 24px 60px -20px rgba(30, 5, 10, 0.45);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Colors used by the publication-status labels. */
+  --status-published: #3F7D4F;
+  --status-published-bg: #E9F2EA;
+  --status-unpublished: #8A6A2F;
+  --status-unpublished-bg: #F5EEDD;
+  --status-presentation: #5E3B84;
+  --status-presentation-bg: #EFE7F5;
+  --status-report: #2F6C8A;
+  --status-report-bg: #E6F0F4;
+
+  --header-h: 68px;
+}
+
+@media (min-width:641px) {
+  :root {
+    --header-h: 74px;
+  }
+}
+

@@ -1,0 +1,35 @@
+/* Owns small reusable helper classes only; must not contain page-specific layout. */
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width:640px) {
+  .wrap {
+    padding: 0 20px;
+  }
+}
+
+/* anchor targets should not hide under the sticky header */
+#papers,
+#top {
+  scroll-margin-top: var(--header-h);
+}
+
+/* Shared framing for the supporting sections below the catalogue. */
+.demo-frame {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 6px;
+}
+
+.demo-note {
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 10px 0 26px;
+}
+
+

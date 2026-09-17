@@ -1,0 +1,110 @@
+/* Owns catalogue skeleton rules only; must not contain page content styling. */
+/* Placeholder cards shown while paper.json is loading. */
+.skeleton-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sk {
+  background: linear-gradient(90deg, var(--line) 25%, #f1e9d8 37%, var(--line) 63%);
+  background-size: 400% 100%;
+  animation: skShimmer 1.4s ease infinite;
+  border-radius: 6px;
+}
+
+@keyframes skShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.sk-title {
+  height: 20px;
+  width: 85%;
+}
+
+.sk-line {
+  height: 12px;
+  width: 60%;
+}
+
+.sk-pill {
+  height: 22px;
+  width: 64px;
+  border-radius: 99px;
+}
+
+.sk-body {
+  height: 12px;
+}
+
+.sk-body:nth-child(2) {
+  width: 92%;
+}
+
+.sk-body:nth-child(3) {
+  width: 75%;
+}
+
+.empty-state,
+.error-state {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 56px 24px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-m);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.empty-state svg,
+.error-state svg {
+  color: var(--maroon-700);
+  opacity: .55;
+}
+
+.empty-state h3,
+.error-state h3 {
+  font-size: 19px;
+  color: var(--maroon-900);
+  font-weight: 700;
+}
+
+.empty-state p,
+.error-state p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+.error-state code {
+  background: var(--paper-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-size: 12.5px;
+}
+
+.load-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.load-more-wrap[hidden] {
+  display: none;
+}
+

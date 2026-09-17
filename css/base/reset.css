@@ -1,0 +1,80 @@
+/* Owns global reset and shared transitions only; must not contain feature styling. */
+/* Fade theme-related colors instead of changing them abruptly. */
+body,
+.site-header,
+.search-panel,
+.mobile-menu-panel,
+.paper-card,
+.skeleton-card,
+.modal,
+.detail-modal,
+.chat-panel,
+.chat-msg-bot,
+.tour-card,
+.detail-sidebar,
+input,
+select,
+textarea,
+.field-select,
+.sort-select,
+.scope-select,
+.pill,
+.chip,
+.filter-chip {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--paper-bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(222, 108, 104, 0.35);
+  color: var(--maroon-950);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+p {
+  margin: 0;
+}
+
